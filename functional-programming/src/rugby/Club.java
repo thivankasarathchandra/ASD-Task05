@@ -10,159 +10,120 @@ package rugby;
  ******************************************************************************/
 
 public class Club implements Comparable<Club> {
-  private int position;
-  private String club;
-  private int played;
-  private int won;
-  private int drawn;
-  private int lost;
-  private int pointsFor;
-  private int pointsAgainst;
-  private int pointsDifference;
-  private int triesFor;
-  private int triesAgainst;
-  private int tryBonus;
-  private int losingBonus;
-  private int points;
+    private final int position;
+    private final String club;
+    private final int played;
+    private final int won;
+    private final int drawn;
+    private final int lost;
+    private final int pointsFor;
+    private final int pointsAgainst;
+    private final int pointsDifference;
+    private final int triesFor;
+    private final int triesAgainst;
+    private final int tryBonus;
+    private final int losingBonus;
+    private final int points;
 
-  public Club(int position, String club, int played, int won, int drawn,
-      int lost, int pointsFor, int pointsAgainst, int pointsDifference,
-      int triesFor, int triesAgainst, int tryBonus, int losingBonus,
-      int points) {
-    this.position = position;
-    this.club = club;
-    this.played = played;
-    this.won = won;
-    this.drawn = drawn;
-    this.lost = lost;
-    this.pointsFor = pointsFor;
-    this.pointsAgainst = pointsAgainst;
-    this.pointsDifference = pointsDifference;
-    this.triesFor = triesFor;
-    this.triesAgainst = triesAgainst;
-    this.tryBonus = tryBonus;
-    this.losingBonus = losingBonus;
-    this.points = points;
-  }
+    public Club(int position, String club, int played, int won, int drawn,
+                int lost, int pointsFor, int pointsAgainst, int pointsDifference,
+                int triesFor, int triesAgainst, int tryBonus, int losingBonus,
+                int points) {
+        this.position = position;
+        this.club = club;
+        this.played = played;
+        this.won = won;
+        this.drawn = drawn;
+        this.lost = lost;
+        this.pointsFor = pointsFor;
+        this.pointsAgainst = pointsAgainst;
+        this.pointsDifference = pointsDifference;
+        this.triesFor = triesFor;
+        this.triesAgainst = triesAgainst;
+        this.tryBonus = tryBonus;
+        this.losingBonus = losingBonus;
+        this.points = points;
+    }
 
-  public String toString() {
-    return String.format("%-3d%-20s%10d%10d%10d", position, club, pointsFor,
-        pointsAgainst, points);
-  }
+    public int getPosition() {
+        return position;
+    }
 
-  public int getPosition() {
-    return position;
-  }
+    public String getClub() {
+        return club;
+    }
 
-  public void setPosition(int position) {
-    this.position = position;
-  }
+    public int getPlayed() {
+        return played;
+    }
 
-  public String getClub() {
-    return club;
-  }
+    public int getWon() {
+        return won;
+    }
 
-  public void setClub(String club) {
-    this.club = club;
-  }
+    public int getDrawn() {
+        return drawn;
+    }
 
-  public int getPlayed() {
-    return played;
-  }
+    public int getLost() {
+        return lost;
+    }
 
-  public void setPlayed(int played) {
-    this.played = played;
-  }
+    public int getPointsFor() {
+        return pointsFor;
+    }
 
-  public int getWon() {
-    return won;
-  }
+    public int getPointsAgainst() {
+        return pointsAgainst;
+    }
 
-  public void setWon(int won) {
-    this.won = won;
-  }
+    public int getPointsDifference() {
+        return pointsDifference;
+    }
 
-  public int getDrawn() {
-    return drawn;
-  }
+    public int getTriesFor() {
+        return triesFor;
+    }
 
-  public void setDrawn(int drawn) {
-    this.drawn = drawn;
-  }
+    public int getTriesAgainst() {
+        return triesAgainst;
+    }
 
-  public int getLost() {
-    return lost;
-  }
+    public int getTryBonus() {
+        return tryBonus;
+    }
 
-  public void setLost(int lost) {
-    this.lost = lost;
-  }
+    public int getLosingBonus() {
+        return losingBonus;
+    }
 
-  public int getPointsFor() {
-    return pointsFor;
-  }
+    public int getPoints() {
+        return points;
+    }
 
-  public void setPointsFor(int pointsFor) {
-    this.pointsFor = pointsFor;
-  }
+    public Club withPosition(int newPosition) {
+        return new Club(newPosition, club, played, won, drawn, lost, pointsFor,
+                pointsAgainst, pointsDifference, triesFor, triesAgainst, tryBonus,
+                losingBonus, points);
+    }
 
-  public int getPointsAgainst() {
-    return pointsAgainst;
-  }
+    public Club withClub(String newClub) {
+        return new Club(position, newClub, played, won, drawn, lost, pointsFor,
+                pointsAgainst, pointsDifference, triesFor, triesAgainst, tryBonus,
+                losingBonus, points);
+    }
 
-  public void setPointsAgainst(int pointsAgainst) {
-    this.pointsAgainst = pointsAgainst;
-  }
+    public int calculateTotalPoints() {
+        return won * 4 + drawn * 2 + tryBonus + losingBonus;
+    }
 
-  public int getPointsDifference() {
-    return pointsDifference;
-  }
+    @Override
+    public String toString() {
+        return String.format("%-3d%-20s%10d%10d%10d", position, club, pointsFor,
+                pointsAgainst, points);
+    }
 
-  public void setPointsDifference(int pointsDifference) {
-    this.pointsDifference = pointsDifference;
-  }
-
-  public int getTriesFor() {
-    return triesFor;
-  }
-
-  public void setTriesFor(int triesFor) {
-    this.triesFor = triesFor;
-  }
-
-  public int getTriesAgainst() {
-    return triesAgainst;
-  }
-
-  public void setTriesAgainst(int triesAgainst) {
-    this.triesAgainst = triesAgainst;
-  }
-
-  public int getTryBonus() {
-    return tryBonus;
-  }
-
-  public void setTryBonus(int tryBonus) {
-    this.tryBonus = tryBonus;
-  }
-
-  public int getLosingBonus() {
-    return losingBonus;
-  }
-
-  public void setLosingBonus(int losingBonus) {
-    this.losingBonus = losingBonus;
-  }
-
-  public int getPoints() {
-    return points;
-  }
-
-  public void setPoints(int points) {
-    this.points = points;
-  }
-  
-  public int compareTo(Club c) {
-    return ((Integer) pointsFor).compareTo(c.pointsFor);
-  }
+    public int compareTo(Club c) {
+        return Integer.compare(pointsFor, c.pointsFor);
+    }
 }

@@ -1,0 +1,11 @@
+ProductID,ProductName,Category,Price,QuantitySold
+1,Apple,Fruits,1.5,150
+2,Banana,Fruits,0.75,200
+3,Orange,Fruits,1.2,180
+4,Carrot,Vegetables,0.5,250
+5,Tomato,Vegetables,0.8,300
+6,Potato,Vegetables,0.6,400
+7,Bread,Bakery,2,100
+8,Milk,Dairy,1.5,120
+9,Cheese,Dairy,3,80
+10,Chicken,Meat,5,50
