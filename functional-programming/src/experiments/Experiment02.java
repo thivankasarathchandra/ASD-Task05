@@ -16,7 +16,7 @@ public class Experiment02 {
     public static void main(String[] args) {
         try {
             Stream<String> lines = Files.lines(Paths.get("products.csv"));
-            List<Product> products = lines.skip(1) // Skip header line
+            List<Product> products = lines.skip(1) 
                                         .map(Experiment02::lineToProduct) // Map each line to a Product object
                                         .collect(Collectors.toList()); // Collect results to a List
             products.forEach(System.out::println);

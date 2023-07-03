@@ -21,7 +21,7 @@ public class Experiment03 {
 
         try (Stream<String> lines = Files.lines(pathToFile)) {
             List<Product> products = lines
-                    .skip(1) // Skip the header line
+                    .skip(1) 
                     .map(Experiment03::lineToProduct) // Map each line to a Product object
                     .collect(Collectors.toList()); // Collect results to a List
             

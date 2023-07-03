@@ -13,7 +13,6 @@ INDEX VERSION 1.131+C:\Users\Thivanka\Desktop\CINEC\assignments\ADS - Task 5\.me
 3581441940.index
 747718395.index
 1976998369.index
-4228922239.index
 2772803586.index
 3170712695.index
 1055974998.index
